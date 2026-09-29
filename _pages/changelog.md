@@ -16,6 +16,33 @@ include_in_header: true
 <br>
 
 ### `Latest`
+# **Version 7.0**
+Sep 29, 2026
+#### What's New
+- Added a primary language setting — choose whether Japanese or English appears first when you set up the app, and change it anytime in Settings
+- Hymns and the Guide to the Scriptures now follow your primary language (e.g., English hymn numbers and order when English is set first)
+- Fixed an issue where scripture text could appear blank after the app had been in the background for a long time
+
+<br>
+
+________
+<br>
+
+### **Version 6.7**
+Aug 19, 2026
+#### What's New
+- Fixed an issue that could prevent highlighting text in the scriptures and hymns
+
+<br>
+
+### **Version 6.6**
+Aug 18, 2026
+#### What's New
+- Refreshed all scripture and hymn content to the latest, most accurate version
+- Fixed several minor display issues
+
+<br>
+
 ### **Version 6.5**
 Jul 12, 2026
 #### What's New
@@ -238,6 +265,26 @@ ________
 <br>
 
 ### `Latest`
+# **Version 5.0**
+Sep 29, 2026
+#### What's New
+- Added a primary language setting — choose whether Japanese or English appears first when you set up the app, and change it anytime in Settings
+- Hymns and the Guide to the Scriptures now follow your primary language (e.g., English hymn numbers and order when English is set first)
+- Fixed an issue where scripture text could appear blank after the app had been in the background for a long time
+
+<br>
+
+________
+<br>
+
+### **Version 4.5**
+Aug 18, 2026
+#### What's New
+- Refreshed all scripture and hymn content to the latest, most accurate version
+- Fixed several minor display issues
+
+<br>
+
 ### **Version 4.4**
 Jul 10, 2026
 #### What's New
@@ -383,6 +430,33 @@ Jun 14, 2017
 <br>
 
 ### `最新`
+# **バージョン 7.0**
+2026年9月29日
+#### 新機能
+- 第1言語（先に表示する言語）を選べるようになりました（初回起動時に選択、設定からいつでも変更可能）
+- 賛美歌と聖句ガイドが第1言語に合わせて表示されるようになりました（例：英語を第1言語にすると賛美歌の番号と並び順が英語版に）
+- アプリを長時間バックグラウンドにした後、聖典の本文が白紙になることがある不具合を修正
+
+<br>
+
+________
+<br>
+
+### **バージョン 6.7**
+2026年8月19日
+#### 新機能
+- 標準聖典と賛美歌で本文に印を付けられないことがあった不具合を修正
+
+<br>
+
+### **バージョン 6.6**
+2026年8月18日
+#### 新機能
+- 聖典と賛美歌のコンテンツを最新の内容に一新
+- 表示に関する細かな不具合を修正
+
+<br>
+
 ### **バージョン 6.5**
 2026年7月12日
 #### 新機能
@@ -605,6 +679,26 @@ ________
 <br>
 
 ### `最新`
+# **バージョン 5.0**
+2026年9月29日
+#### 新機能
+- 第1言語（先に表示する言語）を選べるようになりました（初回起動時に選択、設定からいつでも変更可能）
+- 賛美歌と聖句ガイドが第1言語に合わせて表示されるようになりました（例：英語を第1言語にすると賛美歌の番号と並び順が英語版に）
+- アプリを長時間バックグラウンドにした後、聖典の本文が白紙になることがある不具合を修正
+
+<br>
+
+________
+<br>
+
+### **バージョン 4.5**
+2026年8月18日
+#### 新機能
+- 聖典と賛美歌のコンテンツを最新の内容に一新
+- 表示に関する細かな不具合を修正
+
+<br>
+
 ### **バージョン 4.4**
 2026年7月10日
 #### 新機能
