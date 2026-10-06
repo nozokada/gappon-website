@@ -11,7 +11,7 @@
 			try {
 				var s = localStorage.getItem("gappon_lang");
 				var lang = (s === "ja" || s === "en") ? s
-					: ((navigator.language || "ja").toLowerCase().indexOf("en") === 0 ? "en" : "ja");
+					: ((navigator.language || "ja").toLowerCase().indexOf("ja") === 0 ? "ja" : "en");
 				var d = document.documentElement;
 				d.lang = lang;
 				d.setAttribute("data-lang", lang);

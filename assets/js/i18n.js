@@ -8,7 +8,7 @@
 //      the current language is shown (handled by CSS keyed on <html data-lang>).
 //
 // The chosen language is stored in localStorage ("gappon_lang") and defaults to
-// Japanese unless the browser language is English. Other scripts (e.g.
+// Japanese for a Japanese browser and English for any other language. Other scripts (e.g.
 // account.js) can read the language and react to changes via `window.Gappon.i18n`.
 
 (function () {
@@ -21,7 +21,7 @@
       var saved = localStorage.getItem(STORAGE_KEY);
       if (saved === "ja" || saved === "en") return saved;
     } catch (e) {}
-    return (navigator.language || "ja").toLowerCase().indexOf("en") === 0 ? "en" : "ja";
+    return (navigator.language || "ja").toLowerCase().indexOf("ja") === 0 ? "ja" : "en";
   }
 
   var currentLang = detectLang();

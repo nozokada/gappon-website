@@ -24,28 +24,28 @@ nav_terms:
 
 # Homepage hero + meta description
 app_description:
-  ja: "日本語話者のための必携の末日聖徒標準聖典アプリ"
-  en: "The must-have LDS standard works app for Japanese-speaking people"
+  ja: "バイリンガルのための標準聖典アプリ"
+  en: "The LDS standard works app for bilingual readers"
 
 # Feature grid (keys match the `key` of each entry in _config.yml `features`)
 all_in_one_title:
   ja: "オールインワン"
   en: "All-in-One App"
 all_in_one_desc:
-  ja: "日本語の標準聖典と賛美歌をすべて収録"
-  en: "All Japanese LDS standard works and the Hymns are included"
+  ja: "標準聖典と賛美歌をすべて収録"
+  en: "All the LDS standard works and the Hymns are included"
 bilingual_title:
   ja: "バイリンガル対応"
   en: "Bilingual Support"
 bilingual_desc:
-  ja: "日本語と英語の聖典を並べて読めます"
-  en: "Read the scriptures in Japanese and English side by side"
+  ja: "日本語・英語・ポルトガル語から2つを選んで、並べて読めます"
+  en: "Pick two of Japanese, English and Portuguese and read them side by side"
 search_title:
   ja: "高速検索"
   en: "Blazing Fast Search"
 search_desc:
-  ja: "日本語でも英語でも、1秒未満で検索結果を表示"
-  en: "Search for a phrase in Japanese or English and get results in less than a second"
+  ja: "語句を入力すると、1秒未満で検索結果を表示"
+  en: "Search for a phrase and get results in less than a second"
 bookmarks_title:
   ja: "かんたんしおり"
   en: "Easy Bookmarks"

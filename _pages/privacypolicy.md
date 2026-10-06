@@ -8,7 +8,7 @@ include_in_header: false
 <div data-i18n-block="en" markdown="1">
 
 **Last updated**  
-July 12, 2026
+October 5, 2026
 
 # Privacy Policy
 Nozomi Okada offers Gappon as a freemium service, provided as is.
@@ -21,6 +21,8 @@ By using our service, you agree to the collection and use of information as desc
 To enhance your experience with our service, we may ask you to provide certain personally identifiable information, such as your username and email address. This information is retained and used solely for the purpose of providing and improving our service.
 
 The app uses Google Firebase services (Google LLC), including a real-time database and Crashlytics for crash reporting. Firebase may collect information to identify you. When a crash occurs, Crashlytics automatically collects non-personal diagnostic data such as stack traces, device model, OS version, and app version. For more information, please refer to Google's privacy policy at [https://policies.google.com/privacy](https://policies.google.com/privacy).
+
+When you download an additional language (such as Portuguese), the app retrieves the list of available languages and the language data from Firebase (Cloud Firestore and Cloud Storage). To protect these downloads from abuse, the app uses Firebase App Check, which confirms through Apple App Attest (iOS) or Google Play Integrity (Android) that requests come from the genuine app.
 
 When you purchase Gappon Premium on our website, payments are processed by Stripe (Stripe, Inc.) and subscription entitlements are managed by RevenueCat, Inc. Your payment card details are entered directly with Stripe and are not stored by us. RevenueCat receives an identifier associated with your account so that your subscription can be recognized across your devices. For details, see Stripe's privacy policy at [https://stripe.com/privacy](https://stripe.com/privacy) and RevenueCat's privacy policy at [https://www.revenuecat.com/privacy](https://www.revenuecat.com/privacy).
 
@@ -38,7 +40,7 @@ If you have any questions or suggestions regarding our privacy policy, please do
 <div data-i18n-block="ja" markdown="1">
 
 **最終更新日**  
-2026年7月12日
+2026年10月5日
 
 # プライバシーポリシー
 Gappon（以下「本アプリ」といいます）は、Nozomi Okadaによりフリーミアムアプリとして提供されています。本アプリに関するサービス（以下「本サービス」といいます）は、現状のまま提供されています。
@@ -51,6 +53,8 @@ Gappon（以下「本アプリ」といいます）は、Nozomi Okadaにより�
 本サービスのさらなる品質向上のために、ユーザー名やEメールアドレスなどの特定の個人情報を提供していただく場合があります。この情報は、本サービスの提供と改善のためにのみ保持され、使用されます。
 
 本アプリは、Google LLCが提供するGoogle Firebaseサービス（リアルタイムデータベース、およびクラッシュレポートのためのFirebase Crashlytics）を利用しています。Firebaseは個人を特定する情報を収集する場合があります。また、クラッシュ発生時にはCrashlyticsがスタックトレース・デバイス情報（機種名・OSバージョン）・アプリバージョン等の診断情報を自動収集しますが、これらは個人を特定するものではありません。詳細については、Googleのプライバシーポリシー（[https://policies.google.com/privacy?hl=ja](https://policies.google.com/privacy?hl=ja)）をご確認ください。
+
+追加の言語（ポルトガル語など）をダウンロードする際、本アプリはダウンロード可能な言語の一覧と言語データをFirebase（Cloud FirestoreおよびCloud Storage）から取得します。また、これらのダウンロードの不正利用を防ぐため、Firebase App Checkを利用し、Apple App Attest（iOS）またはGoogle Play Integrity（Android）により、リクエストが正規のアプリからのものであることを確認しています。
 
 本ウェブサイトでGapponプレミアムをご購入いただく場合、お支払いはStripe（Stripe, Inc.）により処理され、サブスクリプションの権利はRevenueCat, Inc.によって管理されます。クレジットカード情報はStripeに直接入力され、当社が保存することはありません。RevenueCatは、お客様のサブスクリプションを複数の端末間で認識するために、お客様のアカウントに関連付けられた識別子を受け取ります。詳細は、Stripeのプライバシーポリシー（[https://stripe.com/privacy](https://stripe.com/privacy)）およびRevenueCatのプライバシーポリシー（[https://www.revenuecat.com/privacy](https://www.revenuecat.com/privacy)）をご確認ください。
 
