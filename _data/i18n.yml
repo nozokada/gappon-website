@@ -25,7 +25,7 @@ nav_terms:
 # Homepage hero + meta description
 app_description:
   ja: "バイリンガルのための標準聖典アプリ"
-  en: "The LDS standard works app for bilingual readers"
+  en: "The standard works app for bilingual readers"
 
 # Feature grid (keys match the `key` of each entry in _config.yml `features`)
 all_in_one_title:
@@ -33,7 +33,7 @@ all_in_one_title:
   en: "All-in-One App"
 all_in_one_desc:
   ja: "標準聖典と賛美歌をすべて収録"
-  en: "All the LDS standard works and the Hymns are included"
+  en: "All the standard works and the Hymns are included"
 bilingual_title:
   ja: "バイリンガル対応"
   en: "Bilingual Support"
