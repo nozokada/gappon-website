@@ -16,6 +16,16 @@ include_in_header: true
 <br>
 
 ### `Latest`
+### **Version 7.1**
+Oct 6, 2026
+#### What's New
+- Added Portuguese (free download from Settings > Add or Manage Languages)
+- Menus and settings are now available in Portuguese
+- Added language pairs without English, such as Japanese and Portuguese (Gappon Premium)
+- Reduced the app's storage size
+
+<br>
+
 # **Version 7.0**
 Sep 29, 2026
 #### What's New
@@ -265,6 +275,16 @@ ________
 <br>
 
 ### `Latest`
+### **Version 5.1**
+Oct 6, 2026
+#### What's New
+- Added Portuguese (free download from Settings > Add or Manage Languages)
+- Menus and settings are now available in Portuguese
+- Added language pairs without English, such as Japanese and Portuguese (Gappon Premium)
+- Reduced the app's storage size
+
+<br>
+
 # **Version 5.0**
 Sep 29, 2026
 #### What's New
@@ -430,6 +450,16 @@ Jun 14, 2017
 <br>
 
 ### `最新`
+### **バージョン 7.1**
+2026年10月6日
+#### 新機能
+- ポルトガル語に対応しました（設定の「言語を追加・管理」から無料でダウンロード）
+- メニューや設定などの画面がポルトガル語でも表示されるようになりました
+- 英語を含まない言語の組み合わせ（例：日本語とポルトガル語）で読めるようになりました（Gapponプレミアム）
+- アプリの容量を軽くしました
+
+<br>
+
 # **バージョン 7.0**
 2026年9月29日
 #### 新機能
@@ -679,6 +709,16 @@ ________
 <br>
 
 ### `最新`
+### **バージョン 5.1**
+2026年10月6日
+#### 新機能
+- ポルトガル語に対応しました（設定の「言語を追加・管理」から無料でダウンロード）
+- メニューや設定などの画面がポルトガル語でも表示されるようになりました
+- 英語を含まない言語の組み合わせ（例：日本語とポルトガル語）で読めるようになりました（Gapponプレミアム）
+- アプリの容量を軽くしました
+
+<br>
+
 # **バージョン 5.0**
 2026年9月29日
 #### 新機能
