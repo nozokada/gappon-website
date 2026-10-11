@@ -275,6 +275,20 @@ ________
 <br>
 
 ### `Latest`
+### **Version 5.2**
+Oct 10, 2026
+#### What's New
+- Expanded search to introductions, the Guide to the Scriptures, and chapter headings
+- Search results show the text around each match; added a GS filter
+- Improved typing responsiveness in search
+- Text-to-speech now also reads pages without verses (Gappon Premium)
+- Redesigned Highlights (Gappon Premium)
+- Bookmarks show the opening of each verse
+- Lists follow the text size and Alternative Font settings
+- Fixed furigana in highlighted text, and notes not opening for highlights from iOS
+
+<br>
+
 ### **Version 5.1**
 Oct 6, 2026
 #### What's New
@@ -709,6 +723,20 @@ ________
 <br>
 
 ### `最新`
+### **バージョン 5.2**
+2026年10月10日
+#### 新機能
+- 検索の対象を序文・聖句ガイド・章の前書きや要約にも広げました
+- 検索結果に一致した箇所の前後を表示し、範囲に「聖句ガイド」を追加
+- 検索で文字を入力するときの動作を軽くしました
+- 節のないページも読み上げるようになりました（Gapponプレミアム）
+- 「印とメモ」を見やすく一新しました（Gapponプレミアム）
+- しおりの一覧に節の冒頭を表示
+- 一覧の文字が文字サイズと代替フォントの設定に合わせて変わるように改善
+- 印を付けた文にふりがなが混ざる不具合と、iOS で付けた印をタップしてもメモが開かない不具合を修正
+
+<br>
+
 ### **バージョン 5.1**
 2026年10月6日
 #### 新機能
