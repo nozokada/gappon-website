@@ -16,6 +16,20 @@ include_in_header: true
 <br>
 
 ### `Latest`
+### **Version 7.2**
+Oct 11, 2026
+#### What's New
+- Expanded search to introductions, the Guide to the Scriptures, and chapter headings
+- Search results now show the text around each match; added a GS filter
+- Text-to-speech now keeps playing on other screens (control it from the mini player, Gappon Premium)
+- Redesigned Highlights, now searchable by the highlighted text (Gappon Premium)
+- Bookmarks now show the opening of each verse
+- Fixed furigana mixing into highlighted text, and a crash when searching Highlights with an apostrophe
+- Fixed notes not opening when tapping highlights from Android
+- Adjusted text size and line height in lists
+
+<br>
+
 ### **Version 7.1**
 Oct 6, 2026
 #### What's New
@@ -464,6 +478,20 @@ Jun 14, 2017
 <br>
 
 ### `最新`
+### **バージョン 7.2**
+2026年10月11日
+#### 新機能
+- 検索の対象を序文・聖句ガイド・章の前書きや要約にも広げました
+- 検索結果に一致した箇所の前後を表示し、範囲に「聖句ガイド」を追加
+- 読み上げがほかの画面に移っても続くようになりました（ミニプレーヤーで操作、Gapponプレミアム）
+- 「印とメモ」を見やすく一新し、印を付けた文でも検索できるようにしました（Gapponプレミアム）
+- しおりの一覧に節の冒頭を表示
+- 印を付けた文にふりがなが混ざる不具合と、「印とメモ」の検索で「'」を入力するとアプリが終了する不具合を修正
+- Android で付けた印をタップしてもメモが開かない不具合を修正
+- 一覧の文字の大きさと行の高さを調整
+
+<br>
+
 ### **バージョン 7.1**
 2026年10月6日
 #### 新機能
