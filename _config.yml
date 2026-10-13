@@ -41,7 +41,7 @@ features                                  :
 
   - key                                   : bilingual
     title                                 : Bilingual Support
-    description                           : Pick two of Japanese, English and Portuguese and read them side by side
+    description                           : Pick two of Japanese, English, Portuguese and Spanish and read them side by side
     fontawesome_icon_name                 : language
 
   - key                                   : search
