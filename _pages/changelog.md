@@ -16,6 +16,15 @@ include_in_header: true
 <br>
 
 ### `Latest`
+### **Version 7.3**
+Oct 12, 2026
+#### What's New
+- Added Spanish (free download from Settings > Add or Remove Languages)
+- Menus and settings are now available in Spanish
+- Text-to-speech now uses Enhanced or Premium voices downloaded to your device (Gappon Premium)
+
+<br>
+
 ### **Version 7.2**
 Oct 11, 2026
 #### What's New
@@ -289,6 +298,14 @@ ________
 <br>
 
 ### `Latest`
+### **Version 5.3**
+Oct 12, 2026
+#### What's New
+- Added Spanish (free download from Settings > Add or Remove Languages)
+- Menus and settings are now available in Spanish
+
+<br>
+
 ### **Version 5.2**
 Oct 10, 2026
 #### What's New
@@ -478,6 +495,15 @@ Jun 14, 2017
 <br>
 
 ### `最新`
+### **バージョン 7.3**
+2026年10月12日
+#### 新機能
+- スペイン語に対応しました（設定の「言語を追加・削除」から無料でダウンロード）
+- メニューや設定などの画面がスペイン語でも表示されるようになりました
+- 読み上げで、端末にダウンロードした高品質な声（「拡張」「プレミアム」）を使うようにしました（Gapponプレミアム）
+
+<br>
+
 ### **バージョン 7.2**
 2026年10月11日
 #### 新機能
@@ -751,6 +777,14 @@ ________
 <br>
 
 ### `最新`
+### **バージョン 5.3**
+2026年10月12日
+#### 新機能
+- スペイン語に対応しました（設定の「言語を追加・削除」から無料でダウンロード）
+- メニューや設定などの画面がスペイン語でも表示されるようになりました
+
+<br>
+
 ### **バージョン 5.2**
 2026年10月10日
 #### 新機能
