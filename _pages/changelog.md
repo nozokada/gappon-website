@@ -16,6 +16,16 @@ include_in_header: true
 <br>
 
 ### `Latest`
+### **Version 7.4**
+Oct 14, 2026
+#### What's New
+- Added Continue Reading: open where you left off in one tap (Gappon Premium)
+- Section headings in the Guide to the Scriptures and the Joseph Smith Translation, and missing chapter introductions, are now shown
+- Verses combined in the Japanese Bible (e.g., Isaiah 4:3, 4) now appear separately when Japanese is hidden
+- Fixed downloaded languages becoming unavailable after an update
+
+<br>
+
 ### **Version 7.3**
 Oct 12, 2026
 #### What's New
@@ -298,6 +308,16 @@ ________
 <br>
 
 ### `Latest`
+### **Version 5.4**
+Oct 14, 2026
+#### What's New
+- Added Continue Reading: open where you left off in one tap (Gappon Premium)
+- Section headings in the Guide to the Scriptures and the Joseph Smith Translation, and missing chapter introductions, are now shown
+- Verses combined in the Japanese Bible (e.g., Isaiah 4:3, 4) now appear separately when Japanese is hidden
+- Fixed downloaded languages becoming unavailable after an update
+
+<br>
+
 ### **Version 5.3**
 Oct 12, 2026
 #### What's New
@@ -495,6 +515,16 @@ Jun 14, 2017
 <br>
 
 ### `最新`
+### **バージョン 7.4**
+2026年10月14日
+#### 新機能
+- 前回読んでいた場所を1タップで開ける「続きから読む」を追加（Gapponプレミアム）
+- 聖句ガイドやジョセフ・スミス訳の小見出しと、表示されていなかった章の前書きを表示するようにしました
+- 日本語の聖書で2つの節をまとめている箇所（イザヤ書4:3, 4など）を、日本語を表示していないときは節ごとに表示するようにしました
+- アプリの更新後、ダウンロードした言語が使えなくなる問題を修正
+
+<br>
+
 ### **バージョン 7.3**
 2026年10月12日
 #### 新機能
@@ -777,6 +807,16 @@ ________
 <br>
 
 ### `最新`
+### **バージョン 5.4**
+2026年10月14日
+#### 新機能
+- 前回読んでいた場所を1タップで開ける「続きから読む」を追加（Gapponプレミアム）
+- 聖句ガイドやジョセフ・スミス訳の小見出しと、表示されていなかった章の前書きを表示するようにしました
+- 日本語の聖書で2つの節をまとめている箇所（イザヤ書4:3, 4など）を、日本語を表示していないときは節ごとに表示するようにしました
+- アプリの更新後、ダウンロードした言語が使えなくなる問題を修正
+
+<br>
+
 ### **バージョン 5.3**
 2026年10月12日
 #### 新機能
