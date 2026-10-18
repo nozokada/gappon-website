@@ -308,6 +308,13 @@ ________
 <br>
 
 ### `Latest`
+### **Version 5.5**
+Oct 17, 2026
+#### What's New
+- Added sharing of usage data, such as your language pair and display settings, in a form that does not identify you
+
+<br>
+
 ### **Version 5.4**
 Oct 14, 2026
 #### What's New
@@ -807,6 +814,13 @@ ________
 <br>
 
 ### `最新`
+### **バージョン 5.5**
+2026年10月17日
+#### 新機能
+- 言語の組み合わせや表示設定などの利用状況を、個人を特定しない形式で送信するようにしました
+
+<br>
+
 ### **バージョン 5.4**
 2026年10月14日
 #### 新機能
