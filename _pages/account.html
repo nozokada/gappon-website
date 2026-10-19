@@ -75,6 +75,9 @@ include_in_header: true
     background: #e8f6ec; border: 1px solid #b6e0c2; border-radius: 9px;
     padding: 11px 14px; margin: 0 0 16px; color: #1e7e34; font-weight: 600;
   }
+  /* Persistent "active" marker; the green matches .banner-success. */
+  .status-heading { display: flex; align-items: center; gap: 8px; }
+  .status-check { flex: none; width: 0.95em; height: 0.95em; color: #1e7e34; }
   .note { font-size: 13px; color: rgba(0,0,0,0.5); line-height: 1.6; margin-top: 20px; }
   .recaptcha-note { margin-top: 12px; }
   /* Value proposition shown on the signed-out card to encourage sign-up/purchase. */
@@ -219,7 +222,7 @@ include_in_header: true
   <!-- Subscription status & management (also shown right after a purchase) -->
   <div id="view-active" class="purchase-card" hidden>
     <p id="active-banner" class="banner-success" data-i18n="banner_thanks" hidden>Gappon Premium にご登録いただきありがとうございます。</p>
-    <h2 style="margin-top:0;" data-i18n="status_title">サブスクリプションが有効です</h2>
+    <h2 class="status-heading" style="margin-top:0;"><svg class="status-check" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="currentColor"/><path d="M7 12.5l3.2 3.2L17 9" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-i18n="status_title">サブスクリプションが有効です</span></h2>
     <p id="active-expiry" class="account-line" hidden></p>
     <p data-i18n="active_body"></p>
     <button type="button" id="btn-manage" class="btn-primary" data-i18n="btn_manage" hidden>サブスクリプションを管理</button>
