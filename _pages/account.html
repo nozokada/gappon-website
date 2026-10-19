@@ -56,6 +56,9 @@ include_in_header: true
     font-size: 15px; font-weight: 600; cursor: pointer; margin-top: 14px;
   }
   .btn-secondary:hover { background: #f4f4f5; }
+  /* Sign out reads as red text like the apps; a filled red button is kept for destructive actions. */
+  .btn-signout { color: #d92d20; }
+  .btn-signout:hover { background: #fef3f2; }
   .btn-link {
     font-family: inherit; background: none; border: none; color: #1d63ea; cursor: pointer;
     font-size: 14px; padding: 0; margin-top: 14px;
@@ -230,7 +233,7 @@ include_in_header: true
   <div id="view-account" class="purchase-card" hidden>
     <p class="account-line"><span data-i18n="signed_in_as">サインイン中のアカウント</span> <strong id="account-email"></strong></p>
     <button type="button" class="btn-secondary" data-action="settings" data-i18n="btn_account_settings">アカウント設定</button>
-    <button type="button" class="btn-secondary" data-action="signout" data-i18n="btn_signout">サインアウト</button>
+    <button type="button" class="btn-secondary btn-signout" data-action="signout" data-i18n="btn_signout">サインアウト</button>
   </div>
 
   <!-- Account settings: change email / change password -->
