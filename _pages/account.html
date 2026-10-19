@@ -73,6 +73,7 @@ include_in_header: true
     padding: 11px 14px; margin: 0 0 16px; color: #1e7e34; font-weight: 600;
   }
   .note { font-size: 13px; color: rgba(0,0,0,0.5); line-height: 1.6; margin-top: 20px; }
+  .recaptcha-note { margin-top: 12px; }
   /* Value proposition shown on the signed-out card to encourage sign-up/purchase. */
   .value-prop {
     background: #eef3fe; border: 1px solid #d3e0fb; border-radius: 9px;
@@ -190,6 +191,8 @@ include_in_header: true
       <p id="signup-info" class="msg-info" hidden></p>
       <p class="note" data-i18n="note_signup"></p>
     </form>
+    <!-- Required by reCAPTCHA terms: Firebase App Check hides the reCAPTCHA badge. -->
+    <p class="note recaptcha-note"><span data-i18n="recaptcha_before">このサイトは reCAPTCHA で保護されており、Google の</span><a href="https://policies.google.com/privacy" target="_blank" rel="noopener" data-i18n="recaptcha_privacy">プライバシーポリシー</a><span data-i18n="recaptcha_and">と</span><a href="https://policies.google.com/terms" target="_blank" rel="noopener" data-i18n="recaptcha_terms">利用規約</a><span data-i18n="recaptcha_after">が適用されます。</span></p>
   </div>
 
   <!-- Signed in, not premium: subscription / purchase -->

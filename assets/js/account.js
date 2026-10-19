@@ -83,6 +83,11 @@ const I18N = {
       "Gappon アプリまたはこのページで作成したアカウントでサインインしてください。",
     note_signup:
       "すでに Gappon アプリでアカウントをお持ちの場合は、新しく作成せず「サインイン」をご利用ください。二重に作成すると、ご購入が別のアカウントに紐づいてしまう場合があります。",
+    recaptcha_before: "このサイトは reCAPTCHA で保護されており、Google の",
+    recaptcha_privacy: "プライバシーポリシー",
+    recaptcha_and: "と",
+    recaptcha_terms: "利用規約",
+    recaptcha_after: "が適用されます。",
     signed_in_as: "サインイン中のアカウント",
     premium_title: "Gappon Premium",
     plan_name: "年額プラン",
@@ -196,6 +201,11 @@ const I18N = {
       "Sign in with the account you created in the Gappon app or on this page.",
     note_signup:
       "If you already have an account in the Gappon app, please use \"Sign in\" instead of creating a new one. Creating a duplicate account may link your purchase to a different account.",
+    recaptcha_before: "This site is protected by reCAPTCHA and the Google ",
+    recaptcha_privacy: "Privacy Policy",
+    recaptcha_and: " and ",
+    recaptcha_terms: "Terms of Service",
+    recaptcha_after: " apply.",
     signed_in_as: "Signed in as",
     premium_title: "Gappon Premium",
     plan_name: "Annual plan",
