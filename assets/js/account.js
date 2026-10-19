@@ -5,10 +5,14 @@
 // UID via RevenueCat Web Billing (appUserId = UID). See Context Vault
 // billing-plan.md / ADR-003..007.
 //
-// Every key in this file is a publishable public key (Firebase web config and the
-// RevenueCat Web Billing public key), so it is safe to commit. Never place a secret key here.
+// Every key in this file is a publishable public key (Firebase web config, the
+// reCAPTCHA Enterprise site key and the RevenueCat Web Billing public key), so it is safe to commit. Never place a secret key here.
 
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-app.js";
+import {
+  initializeAppCheck,
+  ReCaptchaEnterpriseProvider,
+} from "https://www.gstatic.com/firebasejs/10.14.1/firebase-app-check.js";
 import {
   getAuth,
   signInWithEmailAndPassword,
@@ -43,6 +47,10 @@ const firebaseConfig = {
   messagingSenderId: "1096784941738",
   appId: "1:1096784941738:web:81c815b8c10892a3c836d3",
 };
+
+// reCAPTCHA Enterprise site key (public) registered for this web app in Firebase
+// App Check. Once Authentication enforces App Check, sign in / sign up fail without it.
+const RECAPTCHA_ENTERPRISE_SITE_KEY = "6Lck6vUtAAAAAGsHqRlJen6MIlNVXvxpRxqVQaaZ";
 
 const REVENUECAT_WEB_BILLING_KEY = "rcb_XASpjJodgscKjHwDTIyiMMJdJOAc";
 const ENTITLEMENT_ID = "premium";
@@ -297,6 +305,11 @@ function t(key, params) {
 // ---------------------------------------------------------------------------
 
 const app = initializeApp(firebaseConfig);
+// Must precede getAuth/getFirestore so their first requests carry a token.
+initializeAppCheck(app, {
+  provider: new ReCaptchaEnterpriseProvider(RECAPTCHA_ENTERPRISE_SITE_KEY),
+  isTokenAutoRefreshEnabled: true,
+});
 const auth = getAuth(app);
 const db = getFirestore(app);
 

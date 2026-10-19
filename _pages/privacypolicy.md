@@ -8,7 +8,7 @@ include_in_header: false
 <div data-i18n-block="en" markdown="1">
 
 **Last updated**  
-October 17, 2026
+October 18, 2026
 
 # Privacy Policy
 Nozomi Okada offers Gappon as a freemium service, provided as is.
@@ -22,7 +22,7 @@ To enhance your experience with our service, we may ask you to provide certain p
 
 The app uses Google Firebase services (Google LLC), including a real-time database and Crashlytics for crash reporting. Firebase may collect information to identify you. When a crash occurs, Crashlytics automatically collects non-personal diagnostic data such as stack traces, device model, OS version, and app version. For more information, please refer to Google's privacy policy at [https://policies.google.com/privacy](https://policies.google.com/privacy).
 
-When you download an additional language (such as Portuguese), the app retrieves the list of available languages and the language data from Firebase (Cloud Firestore and Cloud Storage). To protect these downloads from abuse, the app uses Firebase App Check, which confirms through Apple App Attest (iOS) or Google Play Integrity (Android) that requests come from the genuine app.
+When you download an additional language (such as Portuguese), the app retrieves the list of available languages and the language data from Firebase (Cloud Firestore and Cloud Storage). To protect these downloads from abuse, the app uses Firebase App Check, which confirms through Apple App Attest (iOS) or Google Play Integrity (Android) that requests come from the genuine app. On the account page of our website, Firebase App Check uses Google reCAPTCHA (Google LLC) to protect sign-in and account creation from automated abuse; reCAPTCHA collects information about your browser and how you interact with the page, which is subject to Google's [Privacy Policy](https://policies.google.com/privacy) and [Terms of Service](https://policies.google.com/terms).
 
 ## Usage Analytics
 To decide how to improve the app (for example, which languages to add next), the app uses Google Analytics for Firebase (Google LLC) to learn how the app is used. The following information is sent to Google:
@@ -50,7 +50,7 @@ If you have any questions or suggestions regarding our privacy policy, please do
 <div data-i18n-block="ja" markdown="1">
 
 **最終更新日**  
-2026年10月17日
+2026年10月18日
 
 # プライバシーポリシー
 Gappon（以下「本アプリ」といいます）は、Nozomi Okadaによりフリーミアムアプリとして提供されています。本アプリに関するサービス（以下「本サービス」といいます）は、現状のまま提供されています。
@@ -64,7 +64,7 @@ Gappon（以下「本アプリ」といいます）は、Nozomi Okadaにより�
 
 本アプリは、Google LLCが提供するGoogle Firebaseサービス（リアルタイムデータベース、およびクラッシュレポートのためのFirebase Crashlytics）を利用しています。Firebaseは個人を特定する情報を収集する場合があります。また、クラッシュ発生時にはCrashlyticsがスタックトレース・デバイス情報（機種名・OSバージョン）・アプリバージョン等の診断情報を自動収集しますが、これらは個人を特定するものではありません。詳細については、Googleのプライバシーポリシー（[https://policies.google.com/privacy?hl=ja](https://policies.google.com/privacy?hl=ja)）をご確認ください。
 
-追加の言語（ポルトガル語など）をダウンロードする際、本アプリはダウンロード可能な言語の一覧と言語データをFirebase（Cloud FirestoreおよびCloud Storage）から取得します。また、これらのダウンロードの不正利用を防ぐため、Firebase App Checkを利用し、Apple App Attest（iOS）またはGoogle Play Integrity（Android）により、リクエストが正規のアプリからのものであることを確認しています。
+追加の言語（ポルトガル語など）をダウンロードする際、本アプリはダウンロード可能な言語の一覧と言語データをFirebase（Cloud FirestoreおよびCloud Storage）から取得します。また、これらのダウンロードの不正利用を防ぐため、Firebase App Checkを利用し、Apple App Attest（iOS）またはGoogle Play Integrity（Android）により、リクエストが正規のアプリからのものであることを確認しています。本ウェブサイトのアカウントページでは、サインインやアカウント作成の自動化された不正利用を防ぐため、Firebase App CheckがGoogle LLCの提供するGoogle reCAPTCHAを利用します。reCAPTCHAはブラウザの情報やページの操作に関する情報を収集し、これにはGoogleの[プライバシーポリシー](https://policies.google.com/privacy?hl=ja)と[利用規約](https://policies.google.com/terms?hl=ja)が適用されます。
 
 ## 利用状況の計測
 本アプリは、改善の方針（たとえば次に追加する言語）を決めるため、Google LLCが提供するGoogle Analytics for Firebaseを利用して、本アプリの利用状況を把握しています。Googleに送信される情報は次のとおりです。
