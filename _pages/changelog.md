@@ -16,6 +16,22 @@ include_in_header: true
 <br>
 
 ### `Latest`
+### **Version 7.6**
+Oct 20, 2026
+#### What's New
+- Added footnotes: tap a word or its marker (①, a…) to read its footnote
+- References in footnotes and scripture abbreviations in the Japanese Guide to the Scriptures now appear as links (following them requires Gappon Premium)
+- Fixed signing in and creating an account on Mac
+
+<br>
+
+### **Version 7.5**
+Oct 18, 2026
+#### What's New
+- Added sharing of usage data, such as your language pair and display settings, in a form that does not identify you
+
+<br>
+
 ### **Version 7.4**
 Oct 14, 2026
 #### What's New
@@ -308,6 +324,14 @@ ________
 <br>
 
 ### `Latest`
+### **Version 5.6**
+Oct 20, 2026
+#### What's New
+- Added footnotes: tap a word or its marker (①, a…) to read its footnote
+- References in footnotes and scripture abbreviations in the Japanese Guide to the Scriptures now appear as links (following them requires Gappon Premium)
+
+<br>
+
 ### **Version 5.5**
 Oct 17, 2026
 #### What's New
@@ -522,6 +546,22 @@ Jun 14, 2017
 <br>
 
 ### `最新`
+### **バージョン 7.6**
+2026年10月20日
+#### 新機能
+- 本文の語や記号（①、a など）をタップすると、その脚注を読めるようにしました
+- 脚注の中の参照と、聖句ガイドの聖句の略語を、リンクとして表示するようにしました（移動は Gapponプレミアム）
+- Mac でサインインやアカウントの作成ができない問題を修正
+
+<br>
+
+### **バージョン 7.5**
+2026年10月18日
+#### 新機能
+- 言語の組み合わせや表示設定などの利用状況を、個人を特定しない形式で送信するようにしました
+
+<br>
+
 ### **バージョン 7.4**
 2026年10月14日
 #### 新機能
@@ -814,6 +854,14 @@ ________
 <br>
 
 ### `最新`
+### **バージョン 5.6**
+2026年10月20日
+#### 新機能
+- 本文の語や記号（①、a など）をタップすると、その脚注を読めるようにしました
+- 脚注の中の参照と、聖句ガイドの聖句の略語を、リンクとして表示するようにしました（移動は Gapponプレミアム）
+
+<br>
+
 ### **バージョン 5.5**
 2026年10月17日
 #### 新機能
