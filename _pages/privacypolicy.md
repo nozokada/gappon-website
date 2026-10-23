@@ -8,7 +8,7 @@ include_in_header: false
 <div data-i18n-block="en" markdown="1">
 
 **Last updated**  
-October 18, 2026
+October 22, 2026
 
 # Privacy Policy
 Nozomi Okada offers Gappon as a freemium service, provided as is.
@@ -28,6 +28,7 @@ When you download an additional language (such as Portuguese), the app retrieves
 To decide how to improve the app (for example, which languages to add next), the app uses Google Analytics for Firebase (Google LLC) to learn how the app is used. The following information is sent to Google:
 
 - Your settings in the app: the pair of languages you read in, whether the second language is shown (and side by side or stacked), whether the pair is still the default, the languages downloaded, and whether you have Gappon Premium.
+- Which Gappon Premium feature you tried to use when the purchase screen opened (for example, highlights or side-by-side display), and, for a language pair that requires Gappon Premium, the pair you chose.
 - Information collected automatically by Google Analytics for Firebase: an app-instance identifier generated for this purpose, the number and length of sessions, the screens viewed, the app version, the device model and OS version, the device language, and the approximate region (country level).
 
 This information does not include your name, email address, account, or the scriptures, bookmarks, highlights, or notes in the app. The app does not collect the advertising identifier (IDFA or Android Advertising ID), and the information is not used for advertising or tracking across other companies' apps. It is used only to improve the app and is kept for up to 14 months.
@@ -50,7 +51,7 @@ If you have any questions or suggestions regarding our privacy policy, please do
 <div data-i18n-block="ja" markdown="1">
 
 **最終更新日**  
-2026年10月18日
+2026年10月22日
 
 # プライバシーポリシー
 Gappon（以下「本アプリ」といいます）は、Nozomi Okadaによりフリーミアムアプリとして提供されています。本アプリに関するサービス（以下「本サービス」といいます）は、現状のまま提供されています。
@@ -70,6 +71,7 @@ Gappon（以下「本アプリ」といいます）は、Nozomi Okadaにより�
 本アプリは、改善の方針（たとえば次に追加する言語）を決めるため、Google LLCが提供するGoogle Analytics for Firebaseを利用して、本アプリの利用状況を把握しています。Googleに送信される情報は次のとおりです。
 
 - 本アプリ内の設定：表示している言語の組み合わせ、第2言語を表示しているか（左右・上下のどちらで表示しているか）、言語の組み合わせが初期設定のままか、ダウンロードした言語、Gapponプレミアムを利用しているか
+- 購入画面が表示されたときに使おうとしたGapponプレミアムの機能（例：ハイライト、左右に並べた表示）、およびGapponプレミアムが必要な言語の組み合わせの場合は選んだ組み合わせ
 - Google Analytics for Firebaseが自動的に収集する情報：本機能のために生成されるアプリの識別子、セッションの回数と長さ、表示した画面、アプリのバージョン、端末の機種名・OSバージョン、端末の言語、おおよその地域（国単位）
 
 これらの情報には、氏名、Eメールアドレス、アカウント、本アプリ内の聖典・ブックマーク・ハイライト・メモは含まれません。本アプリは広告識別子（IDFAおよびAndroid広告ID）を収集せず、送信した情報を広告や他社のアプリをまたいだトラッキングに使用することはありません。情報はアプリの改善のみに使用し、最長14か月保持されます。
