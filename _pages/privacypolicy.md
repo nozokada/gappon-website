@@ -8,7 +8,7 @@ include_in_header: false
 <div data-i18n-block="en" markdown="1">
 
 **Last updated**  
-October 22, 2026
+October 23, 2026
 
 # Privacy Policy
 Nozomi Okada offers Gappon as a freemium service, provided as is.
@@ -37,8 +37,14 @@ On devices whose region is set to a country in the European Union or the Europea
 
 When you purchase Gappon Premium on our website, payments are processed by Stripe (Stripe, Inc.) and subscription entitlements are managed by RevenueCat, Inc. Your payment card details are entered directly with Stripe and are not stored by us. RevenueCat receives an identifier associated with your account so that your subscription can be recognized across your devices. For details, see Stripe's privacy policy at [https://stripe.com/privacy](https://stripe.com/privacy) and RevenueCat's privacy policy at [https://www.revenuecat.com/privacy](https://www.revenuecat.com/privacy).
 
-## Data Retention
-We retain your personal information for as long as your account remains active. If you wish to have your data deleted, please contact us at [nozokada@gmail.com](mailto:nozokada@gmail.com) and we will remove it promptly.
+## Data Retention and Account Deletion
+We retain your personal information for as long as your account remains active.
+
+You can delete your account at any time on the [My Account](/account/#delete) page of our website: sign in, open "Account settings", and select "Delete account". This permanently deletes your account (email address, username, and password) and the bookmarks, highlights, notes, and reading position synced to the cloud. Data saved in the app on your device is removed when you delete the app.
+
+Purchase records are kept by the payment providers (RevenueCat, Stripe, the App Store, and Google Play) for accounting and legal purposes. Deleting your account does not cancel a subscription purchased through the App Store or Google Play, so please cancel it in the store. A subscription purchased on our website must be canceled before the account can be deleted.
+
+If you can't sign in, or have any other request about your data, please contact us at [nozokada@gmail.com](mailto:nozokada@gmail.com) and we will respond promptly.
 
 ## Changes to This Privacy Policy
 We may update this privacy policy periodically. We advise you to review this page regularly for any changes. Changes to this policy are effective immediately upon posting on this page.
@@ -51,7 +57,7 @@ If you have any questions or suggestions regarding our privacy policy, please do
 <div data-i18n-block="ja" markdown="1">
 
 **最終更新日**  
-2026年10月22日
+2026年10月23日
 
 # プライバシーポリシー
 Gappon（以下「本アプリ」といいます）は、Nozomi Okadaによりフリーミアムアプリとして提供されています。本アプリに関するサービス（以下「本サービス」といいます）は、現状のまま提供されています。
@@ -80,8 +86,14 @@ Gappon（以下「本アプリ」といいます）は、Nozomi Okadaにより�
 
 本ウェブサイトでGapponプレミアムをご購入いただく場合、お支払いはStripe（Stripe, Inc.）により処理され、サブスクリプションの権利はRevenueCat, Inc.によって管理されます。クレジットカード情報はStripeに直接入力され、当社が保存することはありません。RevenueCatは、お客様のサブスクリプションを複数の端末間で認識するために、お客様のアカウントに関連付けられた識別子を受け取ります。詳細は、Stripeのプライバシーポリシー（[https://stripe.com/privacy](https://stripe.com/privacy)）およびRevenueCatのプライバシーポリシー（[https://www.revenuecat.com/privacy](https://www.revenuecat.com/privacy)）をご確認ください。
 
-## データの保持
-お客様の個人情報は、アカウントが有効な期間中保持されます。データの削除をご希望の場合は、[nozokada@gmail.com](mailto:nozokada@gmail.com)までご連絡いただければ、速やかに削除いたします。
+## データの保持とアカウントの削除
+お客様の個人情報は、アカウントが有効な期間中保持されます。
+
+アカウントは、本ウェブサイトの[マイアカウント](/account/#delete)ページからいつでも削除できます。サインインして「アカウント設定」を開き、「アカウントを削除」を選んでください。アカウント（メールアドレス・ユーザー名・パスワード）と、クラウドに同期したブックマーク・ハイライト・メモ・読書位置が完全に削除されます。端末の本アプリに保存されているデータは、本アプリを削除すると消去されます。
+
+購入の記録は、会計上・法令上の必要から決済事業者（RevenueCat・Stripe・App Store・Google Play）が保持します。App StoreまたはGoogle Playで購入したサブスクリプションは、アカウントを削除しても解約されないため、各ストアで解約してください。本ウェブサイトで購入したサブスクリプションは、解約してからアカウントを削除してください。
+
+サインインできない場合や、データに関するその他のご要望は、[nozokada@gmail.com](mailto:nozokada@gmail.com)までご連絡いただければ、速やかに対応いたします。
 
 ## プライバシーポリシーの改定
 本プライバシーポリシーは、改定されることがあります。改定があった場合は、このページに掲載された時点で即時に有効となりますので、定期的にご確認いただくことをお勧めします。

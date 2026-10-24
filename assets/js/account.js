@@ -1,6 +1,6 @@
 // Gappon web account page logic.
 // Handles sign in, account creation, subscription purchase & status, and account
-// settings (change email / change password) for a Firebase account. Premium is
+// settings (change email / change password / delete account) for a Firebase account. Premium is
 // granted by attaching the annual `premium` entitlement to the signed-in Firebase
 // UID via RevenueCat Web Billing (appUserId = UID). See Context Vault
 // billing-plan.md / ADR-003..007.
@@ -26,12 +26,17 @@ import {
   verifyBeforeUpdateEmail,
   reauthenticateWithCredential,
   EmailAuthProvider,
+  deleteUser,
 } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-auth.js";
 import {
   getFirestore,
   doc,
   setDoc,
   serverTimestamp,
+  collection,
+  getDocs,
+  writeBatch,
+  deleteDoc,
 } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore.js";
 import { Purchases, PurchasesError, ErrorCode } from "https://esm.sh/@revenuecat/purchases-js@1";
 
@@ -55,6 +60,12 @@ const RECAPTCHA_ENTERPRISE_SITE_KEY = "6Lck6vUtAAAAAGsHqRlJen6MIlNVXvxpRxqVQaaZ"
 const REVENUECAT_WEB_BILLING_KEY = "rcb_XASpjJodgscKjHwDTIyiMMJdJOAc";
 const ENTITLEMENT_ID = "premium";
 const OFFERING_ID = "default"; // Offering that contains the annual package ($rc_annual)
+
+// Subcollections the apps write under users/{uid} (iOS/Android FirestoreManager:
+// bookmarks, highlights + scriptures, and state/readingPosition). The web SDK can't
+// list subcollections, so account deletion deletes exactly these: add any new
+// per-user subcollection here too.
+const USER_SUBCOLLECTIONS = ["bookmarks", "highlights", "scriptures", "state"];
 
 // ---------------------------------------------------------------------------
 // i18n
@@ -178,6 +189,32 @@ const I18N = {
     err_username_update_generic:
       "ユーザー名を変更できませんでした。しばらくしてから再度お試しください。",
     err_reauth_failed: "パスワードが正しくありません。もう一度お試しください。",
+    section_delete: "アカウントの削除",
+    delete_body: "アカウントを削除すると、次のデータが完全に削除されます。元に戻すことはできません。",
+    delete_item_account: "アカウント（メールアドレス・ユーザー名・パスワード）",
+    delete_item_sync: "クラウドに同期したブックマーク・ハイライト・メモ・読書位置",
+    delete_kept:
+      "各端末のアプリに保存されているデータは削除されません（アプリを削除すると消えます）。購入の記録は、会計上の必要から決済事業者（RevenueCat・Stripe・App Store・Google Play）が保持します。",
+    delete_signout_apps:
+      "アプリでこのアカウントにサインインしている場合は、先にアプリでサインアウトしてください。サインインしたままだと、アプリが同期したデータが残ることがあります。",
+    delete_blocked_web:
+      "自動更新が有効なサブスクリプションがあります。アカウントを削除する前に、「サブスクリプションを管理」から解約してください。解約してこのページに戻ると、削除できるようになります。",
+    delete_blocked_unknown:
+      "サブスクリプション情報を取得できないため、いまは削除できません。ページを再読み込みしてお試しください。",
+    delete_note_store_sub:
+      "{store} のサブスクリプションは、アカウントを削除しても解約されず、請求が続きます。先に解約してください。",
+    delete_note_premium:
+      "削除すると、このアカウントの Gappon Premium はご利用いただけなくなります。Web でのご購入は、ほかのアカウントへ移すことはできません。",
+    delete_confirm_label: "内容を理解したうえで、アカウントを削除します。",
+    btn_delete_account: "アカウントを削除",
+    info_deleting: "削除しています…",
+    err_delete_confirm: "確認のチェックを入れてください。",
+    err_delete_generic: "アカウントを削除できませんでした。しばらくしてから再度お試しください。",
+    err_delete_partial:
+      "同期したデータは削除しましたが、アカウントを削除できませんでした。もう一度お試しください。",
+    info_account_deleted: "アカウントを削除しました。これまでご利用いただき、ありがとうございました。",
+    delete_signin_note:
+      "アカウントを削除するには、削除するアカウントでサインインしてください。サインインすると、削除の画面が開きます。",
   },
   en: {
     title: "My Account",
@@ -291,6 +328,32 @@ const I18N = {
     err_username_update_generic:
       "We couldn't change your username. Please try again later.",
     err_reauth_failed: "That password is incorrect. Please try again.",
+    section_delete: "Delete account",
+    delete_body: "Deleting your account permanently deletes the following. This can't be undone.",
+    delete_item_account: "Your account (email, username, and password)",
+    delete_item_sync: "Bookmarks, highlights, notes, and reading position synced to the cloud",
+    delete_kept:
+      "Data saved in the app on each device is not deleted (it's removed when you delete the app). Purchase records are kept by the payment providers (RevenueCat, Stripe, the App Store, and Google Play) for accounting purposes.",
+    delete_signout_apps:
+      "If you're signed in to this account in the app, please sign out there first. Otherwise, data synced by the app may remain.",
+    delete_blocked_web:
+      "You have a subscription that renews automatically. Before deleting your account, please cancel it from \"Manage subscription\". Once you've canceled and come back to this page, you'll be able to delete your account.",
+    delete_blocked_unknown:
+      "We couldn't load your subscription details, so your account can't be deleted right now. Please reload the page and try again.",
+    delete_note_store_sub:
+      "Deleting your account does not cancel your subscription from {store}, and you'll keep being charged. Please cancel it first.",
+    delete_note_premium:
+      "After deletion, Gappon Premium on this account can no longer be used. Purchases made on this website can't be moved to another account.",
+    delete_confirm_label: "I understand the above and want to delete my account.",
+    btn_delete_account: "Delete account",
+    info_deleting: "Deleting…",
+    err_delete_confirm: "Please check the box to confirm.",
+    err_delete_generic: "We couldn't delete your account. Please try again later.",
+    err_delete_partial:
+      "Your synced data was deleted, but we couldn't delete your account. Please try again.",
+    info_account_deleted: "Your account has been deleted. Thank you for using Gappon.",
+    delete_signin_note:
+      "To delete your account, sign in to the account you want to delete. The deletion screen opens after you sign in.",
   },
 };
 
@@ -343,6 +406,14 @@ let pendingSignedInInfo = null; // { key, params } | null
 let settingsReturnView = "signedIn";
 // A sensitive action awaiting re-authentication. { run, onSuccess, errNode, errKey }
 let pendingSensitive = null;
+// False when the subscription state couldn't be loaded, so account deletion can't
+// tell whether a renewing web subscription would keep billing.
+let entitlementLoaded = false;
+// The page was opened at /account/#delete (the link from the apps and the store
+// listings): open the delete section once signed in.
+let deleteRequested = window.location.hash === "#delete";
+// Banner to show on the signed-out view (e.g. right after deleting the account).
+let pendingSignedOutInfo = null; // key | null
 
 const el = (id) => document.getElementById(id);
 const views = {
@@ -410,16 +481,29 @@ function renderActiveExpiry() {
 //     instead of a (non-functional) button.
 //   - A permanent/non-subscription entitlement (e.g. the legacy lifetime buy-out)
 //     has nothing to manage: no button, no note.
+function isWebManaged(store) {
+  return store === "rc_billing" || store === "stripe";
+}
+
+function isStoreManaged(store) {
+  return (
+    store === "app_store" ||
+    store === "mac_app_store" ||
+    store === "play_store" ||
+    store === "amazon"
+  );
+}
+
+function storeKeySuffix(store) {
+  return store === "play_store" ? "play" : store === "amazon" ? "amazon" : "appstore";
+}
+
 function renderManageControls() {
   const btn = el("btn-manage");
   const store = activeEntitlement?.store || "";
   const url = activeEntitlement?.managementUrl || null;
-  const webManaged = store === "rc_billing" || store === "stripe";
-  const storeManaged =
-    store === "app_store" ||
-    store === "mac_app_store" ||
-    store === "play_store" ||
-    store === "amazon";
+  const webManaged = isWebManaged(store);
+  const storeManaged = isStoreManaged(store);
   // Only subscriptions (renewing, or cancelled-but-still-active until an expiry)
   // are worth pointing at store management; a lifetime buy-out has no expiry.
   const isSubscription =
@@ -431,23 +515,13 @@ function renderManageControls() {
     if (isSubscription) {
       // Renewing (or cancelled-but-active) store subscription: tell the user where
       // to change/cancel it, since that can only be done in the store.
-      const key =
-        store === "play_store"
-          ? "manage_note_play"
-          : store === "amazon"
-          ? "manage_note_amazon"
-          : "manage_note_appstore";
-      setMsg("manage-store-note", key);
+      setMsg("manage-store-note", `manage_note_${storeKeySuffix(store)}`);
     } else {
       // Non-subscription store purchase (e.g. the legacy lifetime buy-out): nothing
       // to cancel, but note that it came from the store and where to review it.
-      const nameKey =
-        store === "play_store"
-          ? "store_name_play"
-          : store === "amazon"
-          ? "store_name_amazon"
-          : "store_name_appstore";
-      setMsg("manage-store-note", "manage_note_lifetime", { store: t(nameKey) });
+      setMsg("manage-store-note", "manage_note_lifetime", {
+        store: t(`store_name_${storeKeySuffix(store)}`),
+      });
     }
   } else {
     setMsg("manage-store-note", null);
@@ -475,6 +549,8 @@ function applyLang(lang) {
   renderPrice();
   renderActiveExpiry();
   renderManageControls();
+  renderDeleteControls();
+  renderDeleteSigninNote();
   refreshPasswordToggles();
   Object.entries(shownMessages).forEach(([nodeId, { key, params }]) => {
     const node = el(nodeId);
@@ -522,17 +598,10 @@ async function resolveEntitlementState(user) {
     el("account-email").textContent = user.email || "";
     el("settings-email").textContent = user.email || "";
 
-    if (hasPremium(customerInfo)) {
-      const ent = customerInfo.entitlements.active[ENTITLEMENT_ID];
-      const rawExpiry = ent?.expirationDate ?? null;
-      activeEntitlement = {
-        expirationDate: rawExpiry ? new Date(rawExpiry) : null,
-        willRenew: Boolean(ent?.willRenew),
-        managementUrl: customerInfo.managementURL ?? null,
-        // Store enum (purchases-js is lowercase): app_store | mac_app_store |
-        // play_store | amazon | stripe | rc_billing | promotional | unknown.
-        store: (ent?.store || "").toLowerCase(),
-      };
+    activeEntitlement = activeEntitlementFrom(customerInfo);
+    entitlementLoaded = true;
+
+    if (activeEntitlement) {
       renderActiveExpiry();
       renderManageControls();
       const banner = el("active-banner");
@@ -540,7 +609,6 @@ async function resolveEntitlementState(user) {
       settingsReturnView = "active";
       showView("active");
     } else {
-      activeEntitlement = null;
       // Surface a one-time info message (e.g. "verification email sent") set
       // right after account creation.
       if (pendingSignedInInfo) {
@@ -555,9 +623,42 @@ async function resolveEntitlementState(user) {
     }
   } catch (err) {
     console.error("[account] failed to resolve entitlement", err);
+    entitlementLoaded = false;
     setMsg("purchase-error", "err_get_info");
     showView("signedIn");
   }
+  if (deleteRequested) openDeleteSection();
+}
+
+function activeEntitlementFrom(customerInfo) {
+  if (!hasPremium(customerInfo)) return null;
+  const ent = customerInfo.entitlements.active[ENTITLEMENT_ID];
+  const rawExpiry = ent?.expirationDate ?? null;
+  return {
+    expirationDate: rawExpiry ? new Date(rawExpiry) : null,
+    willRenew: Boolean(ent?.willRenew),
+    managementUrl: customerInfo.managementURL ?? null,
+    // Store enum (purchases-js is lowercase): app_store | mac_app_store |
+    // play_store | amazon | stripe | rc_billing | promotional | unknown.
+    store: (ent?.store || "").toLowerCase(),
+  };
+}
+
+// Re-reads the subscription without changing the view, e.g. when the user comes
+// back from the Stripe portal after cancelling, so the delete section unlocks.
+async function refreshEntitlement() {
+  if (!auth.currentUser || !purchases) return;
+  try {
+    const customerInfo = await purchases.getCustomerInfo();
+    activeEntitlement = activeEntitlementFrom(customerInfo);
+    entitlementLoaded = true;
+  } catch (err) {
+    console.error("[account] failed to refresh entitlement", err);
+    return;
+  }
+  renderActiveExpiry();
+  renderManageControls();
+  renderDeleteControls();
 }
 
 async function loadOfferingIntoUi(p) {
@@ -834,6 +935,10 @@ function openSettings() {
   setMsg("email-info", null);
   setMsg("password-error", null);
   setMsg("password-info", null);
+  el("form-delete-account").reset();
+  setMsg("delete-error", null);
+  setMsg("delete-info", null);
+  renderDeleteControls();
   resetPasswordVisibility();
   showView("settings");
 }
@@ -1051,6 +1156,130 @@ function passwordUpdateErrorKey(err) {
   }
 }
 
+
+// ---------------------------------------------------------------------------
+// Event: delete account (ADR-036)
+// Runs entirely on this page (no backend): the user's Firestore data is deleted
+// first, then the Firebase account, so a failure part-way leaves an account the
+// user can sign in to and retry with. The RevenueCat customer (UID + purchase
+// records) is kept: it can't be deleted without a secret key, and nothing links
+// it to the person once the Firebase account is gone (see the privacy policy).
+// ---------------------------------------------------------------------------
+
+// A renewing web subscription would keep billing after the account is gone and
+// can only be cancelled from the Stripe portal while signed in, so it blocks
+// deletion. Store subscriptions can't be cancelled from here either, but the
+// store keeps them manageable without our account, so they only get a warning.
+function deleteBlockReason() {
+  if (!entitlementLoaded) return "delete_blocked_unknown";
+  const ent = activeEntitlement;
+  if (ent && isWebManaged(ent.store) && ent.willRenew) return "delete_blocked_web";
+  return null;
+}
+
+function renderDeleteControls() {
+  const warning = el("delete-sub-warning");
+  const manageBtn = el("btn-delete-manage");
+  const btn = el("btn-delete-account");
+  if (!warning || !manageBtn || !btn) return;
+  const ent = activeEntitlement;
+  const blockKey = deleteBlockReason();
+  let text = "";
+  if (blockKey) {
+    text = t(blockKey);
+  } else if (ent && isStoreManaged(ent.store) && ent.willRenew) {
+    const suffix = storeKeySuffix(ent.store);
+    const sep = currentLang === "ja" ? "" : " ";
+    text = t("delete_note_store_sub", { store: t(`store_name_${suffix}`) }) + sep + t(`manage_note_${suffix}`);
+  } else if (ent) {
+    text = t("delete_note_premium");
+  }
+  el("delete-sub-text").textContent = text;
+  warning.hidden = !text;
+  manageBtn.hidden = !(blockKey === "delete_blocked_web" && ent?.managementUrl);
+  btn.disabled = Boolean(blockKey) || !el("delete-confirm").checked;
+}
+
+function renderDeleteSigninNote() {
+  setMsg("delete-signin-note", deleteRequested ? "delete_signin_note" : null);
+  const promo = el("promo-annual");
+  if (promo) promo.hidden = deleteRequested;
+}
+
+function openDeleteSection() {
+  deleteRequested = false;
+  // Drop the hash so a reload doesn't reopen the delete section.
+  history.replaceState(null, "", window.location.pathname + window.location.search);
+  renderDeleteSigninNote();
+  openSettings();
+  el("section-delete")?.scrollIntoView({ behavior: "smooth", block: "start" });
+}
+
+async function deleteUserData(uid) {
+  const userRef = doc(db, "users", uid);
+  for (const name of USER_SUBCOLLECTIONS) {
+    const snap = await getDocs(collection(userRef, name));
+    // A write batch takes at most 500 operations.
+    for (let i = 0; i < snap.docs.length; i += 500) {
+      const batch = writeBatch(db);
+      snap.docs.slice(i, i + 500).forEach((d) => batch.delete(d.ref));
+      await batch.commit();
+    }
+  }
+  await deleteDoc(userRef);
+}
+
+async function deleteAccount(user) {
+  const btn = el("btn-delete-account");
+  btn.disabled = true;
+  setMsg("delete-error", null);
+  setMsg("delete-info", "info_deleting");
+  let dataDeleted = false;
+  try {
+    await deleteUserData(user.uid);
+    dataDeleted = true;
+    // deleteUser signs out, which runs onAuthStateChanged before it resolves.
+    pendingSignedOutInfo = "info_account_deleted";
+    configuredUid = null;
+    await deleteUser(user);
+  } catch (err) {
+    console.error("[account] delete account error", err);
+    pendingSignedOutInfo = null;
+    setMsg("delete-info", null);
+    setMsg(
+      "delete-error",
+      err?.code === "auth/network-request-failed" || err?.code === "unavailable"
+        ? "err_network"
+        : dataDeleted
+        ? "err_delete_partial"
+        : "err_delete_generic"
+    );
+    renderDeleteControls();
+  }
+}
+
+function handleDeleteAccount(event) {
+  event.preventDefault();
+  setMsg("delete-error", null);
+  const user = auth.currentUser;
+  if (!user) return;
+  if (!el("delete-confirm").checked) {
+    setMsg("delete-error", "err_delete_confirm");
+    return;
+  }
+  if (deleteBlockReason()) return;
+  // Always confirm the password, even with a recent sign-in: it guards a session
+  // left open on a shared computer, and it satisfies deleteUser's recent-login
+  // requirement so the data is never deleted with the account left behind.
+  pendingSensitive = {
+    run: () => deleteAccount(user),
+    onSuccess: () => {},
+    errNode: "delete-error",
+    errKeyFor: () => "err_delete_generic",
+  };
+  openReauth();
+}
+
 // ---------------------------------------------------------------------------
 // Event: sign out
 // ---------------------------------------------------------------------------
@@ -1093,8 +1322,13 @@ onAuthStateChanged(auth, (user) => {
     if (signupPwd) signupPwd.value = "";
     el("reauth-modal").hidden = true;
     pendingSensitive = null;
+    activeEntitlement = null;
+    entitlementLoaded = false;
     resetPasswordVisibility();
     showAuthTab("signin");
+    setMsg("signedout-info", pendingSignedOutInfo);
+    pendingSignedOutInfo = null;
+    renderDeleteSigninNote();
     showView("signedOut");
   }
 });
@@ -1153,6 +1387,23 @@ el("form-change-username")?.addEventListener("submit", handleChangeUsername);
 el("form-change-email")?.addEventListener("submit", handleChangeEmail);
 el("form-change-password")?.addEventListener("submit", handleChangePassword);
 el("form-reauth")?.addEventListener("submit", handleReauthConfirm);
+el("form-delete-account")?.addEventListener("submit", handleDeleteAccount);
+el("delete-confirm")?.addEventListener("change", renderDeleteControls);
+el("btn-delete-manage")?.addEventListener("click", handleManage);
+// Coming back from the Stripe portal (another tab) after cancelling: re-read the
+// subscription so the delete section reflects it without a reload.
+document.addEventListener("visibilitychange", () => {
+  if (document.visibilityState === "visible" && !views.settings.hidden) refreshEntitlement();
+});
+window.addEventListener("hashchange", () => {
+  if (window.location.hash !== "#delete") return;
+  deleteRequested = true;
+  if (!views.signedIn.hidden || !views.active.hidden || !views.settings.hidden) {
+    openDeleteSection();
+  } else {
+    renderDeleteSigninNote();
+  }
+});
 document.querySelectorAll("[data-action='signout']").forEach((b) =>
   b.addEventListener("click", handleSignOut)
 );

@@ -108,6 +108,17 @@ include_in_header: true
   .settings-section:first-of-type { margin-top: 0; }
   .settings-section h3 { font-size: 16px; font-weight: 700; margin-bottom: 12px; }
   .settings-divider { border: none; border-top: 1px solid #eee; margin: 24px 0; }
+  .settings-section p.section-body { font-size: 14px; line-height: 1.6; margin-bottom: 12px; }
+  .delete-list { font-size: 14px; line-height: 1.6; margin: 0 0 12px; padding-left: 20px; }
+  .delete-warning {
+    background: #fef3f2; border: 1px solid #fecdca; border-radius: 9px;
+    padding: 11px 14px; margin: 0 0 12px; color: #b42318; font-size: 14px; line-height: 1.6;
+  }
+  .delete-warning .btn-primary { margin-top: 10px; }
+  .delete-confirm { display: flex; gap: 8px; align-items: flex-start; font-size: 14px; line-height: 1.5; margin: 16px 0; cursor: pointer; }
+  .delete-confirm input { margin-top: 3px; flex: none; }
+  .btn-danger { background: #d92d20; }
+  .btn-danger:hover:not(:disabled) { background: #b42318; }
 
   /* Reauth modal */
   .modal-overlay {
@@ -137,7 +148,11 @@ include_in_header: true
 
   <!-- Signed out: sign in / create account -->
   <div id="view-signed-out" class="purchase-card" hidden>
-    <p class="value-prop" data-i18n="promo_annual">年額プランなら、月額よりお得にご利用いただけます。</p>
+    <p id="signedout-info" class="banner-success" hidden></p>
+    <!-- Shown when the page is opened at /account/#delete (the link from the apps
+         and the store listings): deletion needs a sign-in first. -->
+    <p id="delete-signin-note" class="value-prop" hidden></p>
+    <p id="promo-annual" class="value-prop" data-i18n="promo_annual">年額プランなら、月額よりお得にご利用いただけます。</p>
     <div class="auth-tabs" role="tablist">
       <button type="button" id="tab-signin" class="auth-tab" role="tab" aria-selected="true" data-i18n="tab_signin">サインイン</button>
       <button type="button" id="tab-signup" class="auth-tab" role="tab" aria-selected="false" data-i18n="tab_signup">アカウント作成</button>
@@ -314,6 +329,35 @@ include_in_header: true
         <button type="submit" id="btn-update-password" class="btn-primary" data-i18n="btn_update_password">パスワードを変更</button>
         <p id="password-error" class="msg-error" hidden></p>
         <p id="password-info" class="msg-info" hidden></p>
+      </form>
+    </div>
+
+    <hr class="settings-divider">
+
+    <!-- Delete account (ADR-036). Runs entirely on this page: the user's
+         Firestore data is deleted first, then the Firebase account. A renewing
+         web subscription blocks deletion until it is cancelled. -->
+    <div class="settings-section" id="section-delete">
+      <h3 data-i18n="section_delete">アカウントの削除</h3>
+      <p class="section-body" data-i18n="delete_body"></p>
+      <ul class="delete-list">
+        <li data-i18n="delete_item_account"></li>
+        <li data-i18n="delete_item_sync"></li>
+      </ul>
+      <p class="field-hint" data-i18n="delete_kept"></p>
+      <p class="field-hint" data-i18n="delete_signout_apps"></p>
+      <div id="delete-sub-warning" class="delete-warning" hidden>
+        <span id="delete-sub-text"></span>
+        <button type="button" id="btn-delete-manage" class="btn-primary" data-i18n="btn_manage" hidden>サブスクリプションを管理</button>
+      </div>
+      <form id="form-delete-account">
+        <label class="delete-confirm">
+          <input type="checkbox" id="delete-confirm">
+          <span data-i18n="delete_confirm_label">内容を理解したうえで、アカウントを削除します。</span>
+        </label>
+        <button type="submit" id="btn-delete-account" class="btn-primary btn-danger" data-i18n="btn_delete_account" disabled>アカウントを削除</button>
+        <p id="delete-error" class="msg-error" hidden></p>
+        <p id="delete-info" class="msg-info" hidden></p>
       </form>
     </div>
 
