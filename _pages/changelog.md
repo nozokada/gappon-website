@@ -16,6 +16,22 @@ include_in_header: true
 <br>
 
 ### `Latest`
+# **Version 8.0**
+Oct 23, 2026
+#### What's New
+- Added the Topical Guide and Bible Dictionary in English, also linked from English footnotes (following links requires Gappon Premium)
+- Added a Hymns filter to search, and hymn and study help titles are now searchable
+- Following a link now marks every verse it points to with a line at the left edge
+- Made the divider between the two languages thinner and evened out the spacing of lines with furigana
+- Mincho Font is now Alternative Font and works with every language
+- Fixed losing your place when returning from a link
+- Fixed old search results staying after switching languages
+
+<br>
+
+________
+<br>
+
 ### **Version 7.6**
 Oct 20, 2026
 #### What's New
@@ -324,6 +340,20 @@ ________
 <br>
 
 ### `Latest`
+# **Version 6.0**
+Oct 23, 2026
+#### What's New
+- Added the Topical Guide and Bible Dictionary in English, also linked from English footnotes (following links requires Gappon Premium)
+- Added a Hymns filter to search, and hymn and study help titles are now searchable
+- Following a link now marks every verse it points to with a line at the left edge
+- Made the divider between the two languages thinner and evened out the spacing of lines with furigana
+- Fixed losing your place when returning from a link
+
+<br>
+
+________
+<br>
+
 ### **Version 5.6**
 Oct 20, 2026
 #### What's New
@@ -546,6 +576,22 @@ Jun 14, 2017
 <br>
 
 ### `最新`
+# **バージョン 8.0**
+2026年10月23日
+#### 新機能
+- 英語の Topical Guide と Bible Dictionary を追加し、英語の脚注の参照からも開けるようにしました（リンクの移動は Gapponプレミアム）
+- 検索の範囲に「賛美歌」を追加し、賛美歌・聖句ガイドなどの題名でも探せるようにしました
+- リンクで移動したとき、移動先のすべての節を左端の線で示すようにしました
+- 2つの言語の間の仕切り線を細くし、ふりがなのある行の間隔をそろえました
+- 「明朝体を使用」を「代替フォント」に改め、日本語以外の言語でも使えるようにしました
+- リンクの先から戻ったとき、読んでいた位置が失われる不具合を修正
+- 言語を切り替えた後、前の検索結果が残る不具合を修正
+
+<br>
+
+________
+<br>
+
 ### **バージョン 7.6**
 2026年10月20日
 #### 新機能
@@ -854,6 +900,20 @@ ________
 <br>
 
 ### `最新`
+# **バージョン 6.0**
+2026年10月23日
+#### 新機能
+- 英語の Topical Guide と Bible Dictionary を追加し、英語の脚注の参照からも開けるようにしました（リンクの移動は Gapponプレミアム）
+- 検索の範囲に「賛美歌」を追加し、賛美歌・聖句ガイドなどの題名でも探せるようにしました
+- リンクで移動したとき、移動先のすべての節を左端の線で示すようにしました
+- 2つの言語の間の仕切り線を細くし、ふりがなのある行の間隔をそろえました
+- リンクの先から戻ったとき、読んでいた位置が失われる不具合を修正
+
+<br>
+
+________
+<br>
+
 ### **バージョン 5.6**
 2026年10月20日
 #### 新機能
