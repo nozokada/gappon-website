@@ -118,6 +118,17 @@ include_in_header: true
   .delete-confirm { display: flex; gap: 8px; align-items: flex-start; font-size: 14px; line-height: 1.5; margin: 16px 0; cursor: pointer; }
   .delete-confirm input { margin-top: 3px; flex: none; }
   .btn-danger { background: #d92d20; }
+  /* Deletion guide shown before sign-in at /account/#delete. Google Play links
+     here as the "Delete account URL", which must show the steps and the data
+     deleted / kept without signing in. */
+  .delete-guide {
+    background: #fafafa; border: 1px solid #e4e4e7; border-radius: 9px;
+    padding: 16px 18px; margin: 0 0 24px; font-size: 14px; line-height: 1.6;
+  }
+  .delete-guide h2 { font-size: 18px; margin: 0 0 10px; }
+  .delete-guide h3 { font-size: 14px; font-weight: 700; margin: 14px 0 4px; }
+  .delete-guide ol, .delete-guide ul { margin: 0; padding-left: 20px; }
+  .delete-guide p { margin: 0; }
   .btn-danger:hover:not(:disabled) { background: #b42318; }
 
   /* Reauth modal */
@@ -151,7 +162,24 @@ include_in_header: true
     <p id="signedout-info" class="banner-success" hidden></p>
     <!-- Shown when the page is opened at /account/#delete (the link from the apps
          and the store listings): deletion needs a sign-in first. -->
-    <p id="delete-signin-note" class="value-prop" hidden></p>
+    <div id="delete-guide" class="delete-guide" hidden>
+      <h2 data-i18n="delete_guide_title">Gappon のアカウントの削除</h2>
+      <ol>
+        <li data-i18n="delete_step_signin"></li>
+        <li data-i18n="delete_step_confirm"></li>
+        <li data-i18n="delete_step_password"></li>
+      </ol>
+      <h3 data-i18n="delete_deleted_title">削除されるデータ</h3>
+      <ul>
+        <li data-i18n="delete_item_account"></li>
+        <li data-i18n="delete_item_sync"></li>
+      </ul>
+      <h3 data-i18n="delete_kept_title">削除されないデータ</h3>
+      <p data-i18n="delete_kept"></p>
+      <h3 data-i18n="delete_subs_title">サブスクリプションについて</h3>
+      <p data-i18n="delete_subs_body"></p>
+      <p style="margin-top:12px;"><a href="/privacypolicy/" data-i18n="delete_policy_link">詳しくはプライバシーポリシーをご覧ください。</a></p>
+    </div>
     <p id="promo-annual" class="value-prop" data-i18n="promo_annual">年額プランなら、月額よりお得にご利用いただけます。</p>
     <div class="auth-tabs" role="tablist">
       <button type="button" id="tab-signin" class="auth-tab" role="tab" aria-selected="true" data-i18n="tab_signin">サインイン</button>

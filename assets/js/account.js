@@ -213,8 +213,17 @@ const I18N = {
     err_delete_partial:
       "同期したデータは削除しましたが、アカウントを削除できませんでした。もう一度お試しください。",
     info_account_deleted: "アカウントを削除しました。これまでご利用いただき、ありがとうございました。",
-    delete_signin_note:
-      "アカウントを削除するには、削除するアカウントでサインインしてください。サインインすると、削除の画面が開きます。",
+    delete_guide_title: "Gappon のアカウントの削除",
+    delete_step_signin: "下のフォームで、削除するアカウントにサインインします。",
+    delete_step_confirm:
+      "削除の画面が開くので、内容を確認してチェックを入れ、「アカウントを削除」を押します。",
+    delete_step_password: "確認のためパスワードを入力すると、すぐに削除されます。",
+    delete_deleted_title: "削除されるデータ",
+    delete_kept_title: "削除されないデータ",
+    delete_subs_title: "サブスクリプションについて",
+    delete_subs_body:
+      "このサイトで購入した自動更新のサブスクリプションは、先に解約してください。App Store・Google Play で購入したサブスクリプションは、アカウントを削除しても解約されないため、各ストアで解約してください。",
+    delete_policy_link: "詳しくはプライバシーポリシーをご覧ください。",
   },
   en: {
     title: "My Account",
@@ -352,8 +361,17 @@ const I18N = {
     err_delete_partial:
       "Your synced data was deleted, but we couldn't delete your account. Please try again.",
     info_account_deleted: "Your account has been deleted. Thank you for using Gappon.",
-    delete_signin_note:
-      "To delete your account, sign in to the account you want to delete. The deletion screen opens after you sign in.",
+    delete_guide_title: "Delete your Gappon account",
+    delete_step_signin: "Sign in below to the account you want to delete.",
+    delete_step_confirm:
+      "On the deletion screen that opens, review the details, check the box, and select \"Delete account\".",
+    delete_step_password: "Enter your password to confirm. Your account is deleted right away.",
+    delete_deleted_title: "Data that is deleted",
+    delete_kept_title: "Data that is kept",
+    delete_subs_title: "Subscriptions",
+    delete_subs_body:
+      "Please cancel any auto-renewing subscription purchased on this website first. Deleting your account does not cancel a subscription purchased through the App Store or Google Play, so please cancel it in the store.",
+    delete_policy_link: "See our privacy policy for details.",
   },
 };
 
@@ -1201,7 +1219,8 @@ function renderDeleteControls() {
 }
 
 function renderDeleteSigninNote() {
-  setMsg("delete-signin-note", deleteRequested ? "delete_signin_note" : null);
+  const guide = el("delete-guide");
+  if (guide) guide.hidden = !deleteRequested;
   const promo = el("promo-annual");
   if (promo) promo.hidden = deleteRequested;
 }
