@@ -79,6 +79,7 @@ const I18N = {
     loading: "読み込み中…",
     promo_annual:
       "年額プランなら、月額プランよりお得にご利用いただけます。",
+    link_missionaries: "宣教師に贈る方法",
     label_username: "ユーザー名",
     label_email: "メールアドレス",
     label_email_confirm: "メールアドレス（確認のため再入力）",
@@ -232,6 +233,7 @@ const I18N = {
     loading: "Loading…",
     promo_annual:
       "Choose the annual plan and pay less than you would month to month.",
+    link_missionaries: "How to give Premium to a missionary",
     label_username: "Username",
     label_email: "Email",
     label_email_confirm: "Email (re-enter to confirm)",
@@ -1223,6 +1225,8 @@ function renderDeleteSigninNote() {
   if (guide) guide.hidden = !deleteRequested;
   const promo = el("promo-annual");
   if (promo) promo.hidden = deleteRequested;
+  const missionaries = el("missionaries-link");
+  if (missionaries) missionaries.hidden = deleteRequested;
 }
 
 function openDeleteSection() {

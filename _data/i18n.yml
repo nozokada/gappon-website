@@ -12,6 +12,9 @@ nav_account:
 nav_purchase:
   ja: "プレミアム購入"
   en: "Purchase Premium"
+nav_missionaries:
+  ja: "宣教師のご家族へ"
+  en: "For Missionary Families"
 nav_changelog:
   ja: "更新履歴"
   en: "What's New"
