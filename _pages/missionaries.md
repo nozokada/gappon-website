@@ -25,11 +25,12 @@ Mission phones often can't make purchases in the app store. Family and friends c
 ## What Premium adds
 
 - Two languages side by side (for example, Japanese and English)
+- Language pairs without English (for example, Japanese and Portuguese)
 - Opening a chapter and verse by number, highlights and notes, and continue reading
 - Tapping links in the text to open the referenced verses
 - Sync across devices, text-to-speech, and hiding furigana
 
-All the scripture text is free to read and search without Premium.
+All the scripture text is free to read and search without Premium. Japanese, Spanish, and Portuguese can each be read verse by verse with English.
 
 ## How to give it
 
@@ -71,11 +72,12 @@ All the scripture text is free to read and search without Premium.
 ## Premium でできること
 
 - 2つの言語を左右に並べて表示（たとえば日本語と英語）
+- 英語を含まない言語の組み合わせ（たとえば日本語とポルトガル語）
 - 章と節の番号で開く、印とメモ、続きから読む
 - 本文のリンクをタップして、参照先の聖句を開く
 - 複数の端末での同期、読み上げ、ふりがなを消す
 
-聖典の本文は、Premium がなくてもすべて無料で読め、検索もできます。
+聖典の本文は、Premium がなくてもすべて無料で読め、検索もできます。日本語・スペイン語・ポルトガル語を、英語と節ごとに並べて読めます。
 
 ## 贈り方
 
