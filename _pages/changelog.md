@@ -16,6 +16,16 @@ include_in_header: true
 <br>
 
 ### `Latest`
+### **Version 8.1**
+Nov 7, 2026
+#### What's New
+- Added support for iPhone Duo: use it folded or unfolded, and your verse stays in place when you fold or unfold it
+- On iPad and on iPhone in landscape, the book list now fits more books on each row
+- Scripture text in landscape now follows your text size setting
+- The Account screen now explains how to delete your account
+
+<br>
+
 # **Version 8.0**
 Oct 23, 2026
 #### What's New
@@ -340,6 +350,15 @@ ________
 <br>
 
 ### `Latest`
+### **Version 6.1**
+Nov 7, 2026
+#### What's New
+- On tablets, foldables and phones in landscape, the book list now fits more books on each row
+- Fixed the screen title disappearing after rotating the device or folding and unfolding it
+- The Account screen now explains how to delete your account
+
+<br>
+
 # **Version 6.0**
 Oct 23, 2026
 #### What's New
@@ -576,6 +595,16 @@ Jun 14, 2017
 <br>
 
 ### `最新`
+### **バージョン 8.1**
+2026年11月7日
+#### 新機能
+- iPhone Duo に対応しました（閉じても開いても使え、開閉しても読んでいる節がそのまま表示されます）
+- iPad や横向きの iPhone では、本の一覧を画面の幅に合わせて1行により多く並べるようにしました
+- 横向きでも、本文を文字サイズの設定どおりの大きさで表示するようにしました
+- アカウントの削除の方法を「アカウント」画面に記載しました
+
+<br>
+
 # **バージョン 8.0**
 2026年10月23日
 #### 新機能
@@ -900,6 +929,15 @@ ________
 <br>
 
 ### `最新`
+### **バージョン 6.1**
+2026年11月7日
+#### 新機能
+- タブレットや折りたたみ端末、横向きのスマートフォンでは、本の一覧を画面の幅に合わせて1行により多く並べるようにしました
+- 画面を回転したり、折りたたみ端末を開閉したりしたとき、画面上部の題名が消える不具合を修正
+- アカウントの削除の方法を「アカウント」画面に記載しました
+
+<br>
+
 # **バージョン 6.0**
 2026年10月23日
 #### 新機能
