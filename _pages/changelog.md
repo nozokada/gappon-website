@@ -16,6 +16,16 @@ include_in_header: true
 <br>
 
 ### `Latest`
+### **Version 8.2**
+Nov 10, 2026
+#### What's New
+- Added tabs to Read: open several pages and switch between them (Gappon Premium)
+- Read now opens at the page you left last time (Gappon Premium)
+- Added Open in New Tab to the long-press menu of lists and links, and Open in Read to pages opened from Search, Bookmarks or Highlights (Gappon Premium)
+- A page that isn't available in your primary language after you change languages now stays open and says so, instead of closing
+
+<br>
+
 ### **Version 8.1**
 Nov 7, 2026
 #### What's New
@@ -350,6 +360,16 @@ ________
 <br>
 
 ### `Latest`
+### **Version 6.2**
+Nov 10, 2026
+#### What's New
+- Added tabs to Read: open several pages and switch between them (Gappon Premium)
+- Read now opens at the page you left last time (Gappon Premium)
+- Added Open in New Tab to the long-press menu of lists and links, and Open in Read to pages opened from Search, Bookmarks or Highlights (Gappon Premium)
+- A page that isn't available in your primary language after you change languages now stays open and says so, instead of closing
+
+<br>
+
 ### **Version 6.1**
 Nov 7, 2026
 #### What's New
@@ -595,6 +615,16 @@ Jun 14, 2017
 <br>
 
 ### `最新`
+### **バージョン 8.2**
+2026年11月10日
+#### 新機能
+- 「読む」タブで、複数のページをタブで開いて切り替えられるようになりました（Gapponプレミアム）
+- 「読む」タブは、アプリを開き直しても前回のページから表示されます（Gapponプレミアム）
+- 一覧やリンクの長押しで「新しいタブで開く」、探す・ブックマーク・印とメモから開いたページに「『読む』タブで開く」を追加（Gapponプレミアム）
+- 言語を変えて表示中のページが第1言語になくなったとき、ページを閉じずにその旨を表示するようにしました
+
+<br>
+
 ### **バージョン 8.1**
 2026年11月7日
 #### 新機能
@@ -929,6 +959,16 @@ ________
 <br>
 
 ### `最新`
+### **バージョン 6.2**
+2026年11月10日
+#### 新機能
+- 「読む」タブで、複数のページをタブで開いて切り替えられるようになりました（Gapponプレミアム）
+- 「読む」タブは、アプリを開き直しても前回のページから表示されます（Gapponプレミアム）
+- 一覧やリンクの長押しで「新しいタブで開く」、探す・ブックマーク・印とメモから開いたページに「『読む』タブで開く」を追加（Gapponプレミアム）
+- 言語を変えて表示中のページが第1言語になくなったとき、ページを閉じずにその旨を表示するようにしました
+
+<br>
+
 ### **バージョン 6.1**
 2026年11月7日
 #### 新機能
