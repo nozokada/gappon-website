@@ -26,7 +26,7 @@ Mission phones often can't make purchases in the app store. Family and friends c
 
 - Two languages side by side (for example, Japanese and English)
 - Language pairs without English (for example, Japanese and Portuguese)
-- Opening a chapter and verse by number, highlights and notes, and continue reading
+- Opening a chapter and verse by number, highlights and notes, continue reading, and multiple tabs
 - Tapping links in the text to open the referenced verses
 - Sync across devices, text-to-speech, and hiding furigana
 
@@ -73,7 +73,7 @@ All the scripture text is free to read and search without Premium. Japanese, Spa
 
 - 2つの言語を左右に並べて表示（たとえば日本語と英語）
 - 英語を含まない言語の組み合わせ（たとえば日本語とポルトガル語）
-- 章と節の番号で開く、印とメモ、続きから読む
+- 章と節の番号で開く、印とメモ、続きから読む、複数のタブ
 - 本文のリンクをタップして、参照先の聖句を開く
 - 複数の端末での同期、読み上げ、ふりがなを消す
 
