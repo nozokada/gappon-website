@@ -6,6 +6,7 @@
 //   1. `data-i18n="key"`      -> swaps textContent from the string table.
 //   2. `data-i18n-block="ja"` -> long-form content blocks; only the block matching
 //      the current language is shown (handled by CSS keyed on <html data-lang>).
+//   3. `data-i18n-alt="key"`  -> swaps an image's alt text from the string table.
 //
 // The chosen language is stored in localStorage ("gappon_lang") and defaults to
 // Japanese for a Japanese browser and English for any other language. Other scripts (e.g.
@@ -51,6 +52,11 @@
     document.querySelectorAll("[data-i18n]").forEach(function (node) {
       var val = lookup(node.getAttribute("data-i18n"));
       if (val != null) node.textContent = val;
+    });
+
+    document.querySelectorAll("[data-i18n-alt]").forEach(function (node) {
+      var val = lookup(node.getAttribute("data-i18n-alt"));
+      if (val != null) node.setAttribute("alt", val);
     });
 
     var desc = document.querySelector('meta[name="description"]');

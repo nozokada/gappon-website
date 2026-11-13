@@ -1,7 +1,8 @@
 # Site-wide UI string translations (Japanese / English).
 #
 # Consumed client-side: _includes/head.html injects this file as
-# `window.GAPPON_I18N` and assets/js/i18n.js swaps `data-i18n="key"` elements.
+# `window.GAPPON_I18N` and assets/js/i18n.js swaps `data-i18n="key"` elements
+# (and the alt text of `data-i18n-alt="key"` images).
 # Long-form content (legal pages, changelog) is NOT stored here — it lives inline
 # in each page inside `data-i18n-block` containers.
 
@@ -73,3 +74,17 @@ sync_title:
 sync_desc:
   ja: "サインインすれば、しおりや印をすべての端末で同期"
   en: "Sign in to sync your bookmarks and highlights across all your devices"
+
+# Image alt text (`data-i18n-alt`)
+alt_home:
+  ja: "ホーム"
+  en: "Home"
+alt_app_screen:
+  ja: "アルマ書37章を日本語と英語の2列で表示し、ハイライトと選択メニューを開いたアプリの画面"
+  en: "The app showing Alma 37 in Japanese and English side by side, with a highlight and the selection menu open"
+alt_google_play:
+  ja: "Google Play で手に入れよう"
+  en: "Get it on Google Play"
+alt_app_store:
+  ja: "App Store からダウンロード"
+  en: "Download on the App Store"

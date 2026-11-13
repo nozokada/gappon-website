@@ -15,7 +15,7 @@
                                 </video>
                             </div>
 
-                            <img class="iphoneScreen hidden" src="" alt="">
+                            <img class="iphoneScreen hidden" src="" alt="アルマ書37章を日本語と英語の2列で表示し、ハイライトと選択メニューを開いたアプリの画面" data-i18n-alt="alt_app_screen">
                             <img class="phoneFrame" src="assets/silver.png" alt="">
                         </div>
 
@@ -31,7 +31,7 @@
                                     </clipPath>
                                 </defs>
                             </svg>
-                            <img class="appIconLarge" src="{{ site.app_icon }}">
+                            <img class="appIconLarge" src="{{ site.app_icon }}" alt="">
                         </div>
                         <div class="appNamePriceContainer">
                             <h1 class="appName">
@@ -48,9 +48,9 @@
                         </div>
                         <div class="downloadButtonsContainer">
                             {% if site.playstore_link %}
-                                <a class="playStoreLink" href="{{site.playstore_link}}"><img class="playStore" src="assets/playstore.png"></a>
+                                <a class="playStoreLink" href="{{site.playstore_link}}"><img class="playStore" src="assets/playstore.png" alt="Google Play で手に入れよう" data-i18n-alt="alt_google_play"></a>
                             {% endif %}
-                            <a class="appStoreLink" href="{{site.appstore_link}}"><img class="appStore" src="assets/appstore.png"></a>
+                            <a class="appStoreLink" href="{{site.appstore_link}}"><img class="appStore" src="assets/appstore.png" alt="App Store からダウンロード" data-i18n-alt="alt_app_store"></a>
                         </div>
                     </div>
                     {% include features.html %}
