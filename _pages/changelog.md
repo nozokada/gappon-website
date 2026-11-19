@@ -16,6 +16,13 @@ include_in_header: true
 <br>
 
 ### `Latest`
+### **Version 8.3**
+Nov 15, 2026
+#### What's New
+- Improved accessibility (verse actions with VoiceOver, larger text, contrast and more)
+
+<br>
+
 ### **Version 8.2**
 Nov 10, 2026
 #### What's New
@@ -360,6 +367,13 @@ ________
 <br>
 
 ### `Latest`
+### **Version 6.3**
+Nov 15, 2026
+#### What's New
+- Improved accessibility (verse actions with TalkBack, larger text, contrast and more)
+
+<br>
+
 ### **Version 6.2**
 Nov 10, 2026
 #### What's New
@@ -615,6 +629,13 @@ Jun 14, 2017
 <br>
 
 ### `最新`
+### **バージョン 8.3**
+2026年11月15日
+#### 新機能
+- アクセシビリティを改善しました（VoiceOver での節の操作、大きな文字、コントラストなど）
+
+<br>
+
 ### **バージョン 8.2**
 2026年11月10日
 #### 新機能
@@ -959,6 +980,13 @@ ________
 <br>
 
 ### `最新`
+### **バージョン 6.3**
+2026年11月15日
+#### 新機能
+- アクセシビリティを改善しました（TalkBack での節の操作、大きな文字、コントラストなど）
+
+<br>
+
 ### **バージョン 6.2**
 2026年11月10日
 #### 新機能
